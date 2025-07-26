@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_generate_3d"
+        android:icon="@drawable/ic_3d"
+        android:title="Generate 3D"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_compare_series"
+        android:icon="@drawable/ic_compare"
+        android:title="Compare Series"
+        app:showAsAction="ifRoom" />
+</menu>

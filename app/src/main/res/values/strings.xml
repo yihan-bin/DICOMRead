@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">DICOMRead</string>
+    <string name="dicom_thumbnail">DICOM Thumbnail</string>
+    <string name="dicom_image_view">DICOM Image View</string>
+    <string name="reset_view">Reset View</string>
+    <string name="play_pause">Play_Pause</string>
+
+</resources>

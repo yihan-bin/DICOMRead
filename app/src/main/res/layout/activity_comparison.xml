@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000">
+
+    <com.example.dicomread.ZoomableImageView
+        android:id="@+id/imageViewPrimary"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <com.example.dicomread.ZoomableImageView
+        android:id="@+id/imageViewSecondary"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <View
+        android:id="@+id/touch_interceptor"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+    <ProgressBar
+        android:id="@+id/progressPrimary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.4"/>
+
+    <ProgressBar
+        android:id="@+id/progressSecondary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.6"/>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.slider.Slider
+            android:id="@+id/sliderSecondarySlice"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@id/radio_group_control_mode"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:labelBehavior="gone"
+            tools:value="50" />
+
+        <TextView
+            android:id="@+id/tvSecondarySliceInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:background="#80000000"
+            android:padding="4dp"
+            app:layout_constraintTop_toBottomOf="@id/sliderSecondarySlice"
+            app:layout_constraintEnd_toEndOf="@id/sliderSecondarySlice"
+            tools:text="对比序列: 50/100"/>
+
+        <com.google.android.material.slider.Slider
+            android:id="@+id/sliderPrimarySlice"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:labelBehavior="gone"
+            tools:value="30"/>
+
+        <TextView
+            android:id="@+id/tvPrimarySliceInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:background="#80000000"
+            android:padding="4dp"
+            app:layout_constraintBottom_toTopOf="@id/sliderPrimarySlice"
+            app:layout_constraintEnd_toEndOf="@id/sliderPrimarySlice"
+            tools:text="主序列: 30/120"/>
+
+        <com.google.android.material.slider.Slider
+            android:id="@+id/sliderPrimaryAlpha"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:rotation="270"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginStart="-60dp"
+            android:value="1.0"
+            android:stepSize="0.05"
+            android:valueFrom="0.0"
+            android:valueTo="1.0"/>
+
+        <com.google.android.material.slider.Slider
+            android:id="@+id/sliderSecondaryAlpha"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:rotation="270"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginEnd="-60dp"
+            android:value="0.5"
+            android:stepSize="0.05"
+            android:valueFrom="0.0"
+            android:valueTo="1.0"/>
+
+        <ImageButton
+            android:id="@+id/btn_back"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_arrow_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@android:color/white"
+            android:contentDescription="Back" />
+
+        <RadioGroup
+            android:id="@+id/radio_group_control_mode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:background="#A0000000"
+            android:padding="4dp">
+
+            <RadioButton
+                android:id="@+id/radio_control_primary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="操作主图"
+                android:textColor="@android:color/white"/>
+
+            <RadioButton
+                android:id="@+id/radio_control_secondary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="操作对比图"
+                android:textColor="@android:color/white"/>
+
+            <RadioButton
+                android:id="@+id/radio_control_sync"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="同步操作"
+                android:checked="true"
+                android:textColor="@android:color/white"/>
+
+        </RadioGroup>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

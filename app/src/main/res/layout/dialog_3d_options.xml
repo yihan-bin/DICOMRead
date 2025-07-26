@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <TextView
+        android:id="@+id/label_iso_level"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="表面提取阈值"
+        android:textAppearance="?attr/textAppearanceTitleMedium" />
+    <com.google.android.material.slider.Slider
+        android:id="@+id/slider_iso_level"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:labelBehavior="gone"
+        tools:value="300" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:text="值越高，提取密度越大的组织"
+        android:textAppearance="?attr/textAppearanceBodySmall" />
+
+    <TextView
+        android:id="@+id/label_sample_rate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="降采样率 (优化性能)"
+        android:textAppearance="?attr/textAppearanceTitleMedium" />
+    <com.google.android.material.slider.Slider
+        android:id="@+id/slider_sample_rate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:stepSize="0.5"
+        android:value="1.0"
+        android:valueFrom="1.0"
+        android:valueTo="10.0"
+        app:labelBehavior="gone" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:text="值越高，模型越粗糙，但生成越快"
+        android:textAppearance="?attr/textAppearanceBodySmall" />
+
+    <TextView
+        android:id="@+id/label_smoothing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="模型平滑迭代次数"
+        android:textAppearance="?attr/textAppearanceTitleMedium" />
+    <com.google.android.material.slider.Slider
+        android:id="@+id/slider_smoothing"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:stepSize="1"
+        android:value="15"
+        android:valueFrom="0"
+        android:valueTo="50"
+        app:labelBehavior="gone" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:text="值越高，模型表面越平滑"
+        android:textAppearance="?attr/textAppearanceBodySmall" />
+</LinearLayout>
